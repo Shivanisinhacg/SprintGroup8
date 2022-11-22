@@ -113,11 +113,11 @@ void admin_Menu()
 //function to display participants
 void display_Participants(FILE *fptr)
 {
-	fptr = fopen("participant_details.txt", "r");
+	fptr = fopen("participant_details.txt", "w");
 	char line[200];
 	char *token;
 	
-	printf("\nTrainer Details\n-----------------------------------------------\n\n");
+	printf("\nParticipant Details\n-----------------------------------------------\n\n");
 	while(fgets(line, sizeof(line), fptr))
 	{
 		token=strtok(line,",");
@@ -142,13 +142,13 @@ void display_Participants(FILE *fptr)
 //function to display trainers
 void display_Trainers(FILE *fptr)
 {
-	fptr = fopen("trainer_details.txt", "r");
+	fptr = fopen("trainer_details.txt", "w");
 	
 	char line[200];
 	char *token;
 	
 	printf("\nTrainer Details\n-----------------------------------------------\n\n");
-	//printf("Trainer Name\t Qualification\t\t Phone\t Email id\n");
+	printf("Trainer Name\t Qualification\t\t Phone\t Email id\n");
 	//printf("----------------------------------------------------------------\n");
 	while(fgets(line, sizeof(line), fptr))
 	{
@@ -184,7 +184,7 @@ node* read_from_file_quiz(node *head)
 	node* newnode;
 	char line[100];
 	char *end[20];
-	fptr=fopen("quiz.txt","r");
+	fptr=fopen("quiz.txt","w");
 	
 	//printf("Entered the read file");
 	if(fptr==NULL)
@@ -347,7 +347,7 @@ void display_results()
 {
 	 int pid;
 	FILE *fp;
-	fp=fopen("results.txt","r");
+	fp=fopen("results.txt","w");
 	char str[50];
 	printf("Enter participant ID : ");
 	scanf("%s", str);   

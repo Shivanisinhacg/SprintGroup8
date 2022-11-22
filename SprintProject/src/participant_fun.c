@@ -96,7 +96,7 @@ After reaching the quizcode it will store the corresponding 5 question codes.It 
 void searchquiz(int quizcode){
    int q1,q2,q3,q4,q5;
    FILE *fp;
-   fp=fopen("quiz_ques.txt","r");
+   fp=fopen("quiz_ques.txt","w");
    
    
    char line[200];
@@ -146,7 +146,7 @@ void searchques(int q1,int q2,int q3,int q4,int q5, int quizcode){
    node_p *head;
    head=createNode_participant();
    FILE *fp1;
-   fp1=fopen("questions.txt","r");
+   fp1=fopen("questions.txt","w");
    
    char line[200];
    int j=0;

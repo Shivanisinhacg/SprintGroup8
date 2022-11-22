@@ -166,7 +166,7 @@ q_node* read_from_file_question(q_node *head)
 	q_node* newnode;
 	char line[100];
 	char *end[20];
-	fptr=fopen("questions.txt","r");
+	fptr=fopen("questions.txt","w");
 	
 	if(fptr==NULL)
 		printf("File doesn't exist\n");
