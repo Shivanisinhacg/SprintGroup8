@@ -124,7 +124,7 @@ void display_Participants(FILE *fptr)
 		printf("User ID\t\t:\t%s\n", token);
 		
 		token=strtok(NULL,",");
-		token=strtok(NULL,",");
+		/*token=strtok(NULL,",");*/
 		printf("Qualification\t:\t%s\n", token);
 		
 		token=strtok(NULL,",");
