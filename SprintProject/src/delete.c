@@ -2,7 +2,7 @@
 
 
 //Function for creating a new node
-ud *createNodeUser()
+ud *createNodeUser1()
 {
    ud *head = (ud *)malloc(sizeof(ud) * 1);
    head->next = NULL;
@@ -11,7 +11,7 @@ ud *createNodeUser()
 
 
 //Function for adding a new node in the beginning of the linked list.
-ud *addfirstUser(ud *head)
+ud *addfirstUser1(ud *head)
 {
 	
    ud *n = createNodeUser();
@@ -21,7 +21,7 @@ ud *addfirstUser(ud *head)
 }
 
 //Function for loading all the data from participant_details.txt file to a linked list.
-ud *loadUser(char ch){
+ud *loadUser1(char ch){
 
    ud *head =createNodeUser();
    int j=0;
@@ -91,7 +91,7 @@ void unloadUser(ud *head, char ch){
 }
 
 //Function for deleting participant details
-void delete_user(char ch){
+void delete_user1(char ch){
 
    ud *head = loadUser(ch);
    char id[30];

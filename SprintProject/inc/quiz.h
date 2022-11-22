@@ -1,3 +1,5 @@
+#ifndef QUIZ_H
+#define QUIZ_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -234,4 +236,5 @@ ud *loadUser(char);
 
 /*Function for unloading all the data from the linked list to participant_details.txt file*/
 void unloadUser(ud*, char);
-/*FILE* write_user(FILE*, ud*);*/
+FILE* write_user(FILE*, ud*);
+#endif

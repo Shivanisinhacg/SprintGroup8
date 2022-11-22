@@ -1,6 +1,6 @@
 //functions of Admin
 
-#include "quiz.h"
+#include"quiz.h"
 
 int id_count=10000;
 
