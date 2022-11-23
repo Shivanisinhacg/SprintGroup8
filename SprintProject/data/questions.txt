@@ -1,0 +1,21 @@
+2,How are you?,fine,good,bad,okay,2
+3,there are u?,2,3,4,5,1
+4,what i the capital of india?,hyderabad,mumbai,delhi,kolkata,2
+5,hi dks,dslkfs,sdds,sdfsd,dsfsd,4
+7,xkjcshkdfjhskdhf jsdbfjkahsdfjl,jjd,ss,d,rf,3
+8,ssdlkfjslkdj sdkfsdlkfjl,r,d,e,f,3
+200,200th question?,fire,water,hydro,pyro,1
+201,201th question?,fire,water,hydro,pyro,2
+202,202th question?,fire,water,hydro,pyro,3
+203,203th question?,fire,water,hydro,pyro,4
+204,New 204?,1,2,3,4,2
+205,205th question?,fire,water,hydro,pyro,2
+206,206th question?,fire,water,hydro,pyro,1
+207,207th question?,fire,water,hydro,pyro,2
+208,208th question?,fire,water,hydro,pyro,3
+209,Finally did it?,1,2,3,yes,4
+210,New Question?,1,2,3,4,2
+211,hello how r u?,ok,k,okay,good,4
+212,Yes done!?,yes,ye,s,yeah,1
+213,India?,continent,country,state,city,2
+215,hi?,1,2,3,4,2

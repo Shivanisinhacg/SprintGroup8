@@ -1,6 +1,6 @@
 //functions of Admin
 
-#include"quiz.h"
+#include "quiz.h"
 
 int id_count=10000;
 
@@ -11,9 +11,9 @@ void admin_Menu()
 {
 	int id,choice;
 	quiz q;
-	node *head,*newnode;
+	node *head,*temp,*newnode;
 	head=NULL;
-	/*temp=NULL;*/
+	temp=NULL;
 	FILE *dptr2;
 	extern int id_count;
 	
@@ -84,13 +84,13 @@ void admin_Menu()
 				head=delete_Quiz(id,head);
 				break;
 				
-		/*	case 7:
+			case 7:
 				delete_user('P');
 				break;
 				
 			case 8:
 				delete_user('T');
-				break;*/
+				break;
 			
 			
 			case 9:
@@ -117,7 +117,7 @@ void display_Participants(FILE *fptr)
 	char line[200];
 	char *token;
 	
-	printf("\nParticipant Details\n-----------------------------------------------\n\n");
+	printf("\nTrainer Details\n-----------------------------------------------\n\n");
 	while(fgets(line, sizeof(line), fptr))
 	{
 		token=strtok(line,",");
@@ -148,7 +148,7 @@ void display_Trainers(FILE *fptr)
 	char *token;
 	
 	printf("\nTrainer Details\n-----------------------------------------------\n\n");
-	/*printf("Trainer Name\t Qualification\t\t Phone\t Email id\n");*/
+	//printf("Trainer Name\t Qualification\t\t Phone\t Email id\n");
 	//printf("----------------------------------------------------------------\n");
 	while(fgets(line, sizeof(line), fptr))
 	{
@@ -183,7 +183,7 @@ node* read_from_file_quiz(node *head)
 	int count=0;
 	node* newnode;
 	char line[100];
-	/*char *end[20];*/
+	char *end[20];
 	fptr=fopen("quiz.txt","r");
 	
 	//printf("Entered the read file");
@@ -313,7 +313,7 @@ node* delete_Quiz(int id, node *head)
 
 void display_Quiz(node *head)
 {
-/*	int check=0;*/
+	int check=0;
 	node *temp=head;
 		
 	while(temp!=NULL)
@@ -345,7 +345,7 @@ FILE* write_to_file_quiz(FILE *wptr, node *head)
 //parameters: Participant ID
 void display_results()
 {
-/*	 int pid;*/
+	 int pid;
 	FILE *fp;
 	fp=fopen("results.txt","r");
 	char str[50];
@@ -372,7 +372,7 @@ void display_results()
 			 
 			 if(i==2)
 			    printf("\nAttempted Quiz ID :\t%d\n",atoi(token));
-		/*	 if(i==3)
+			 /*if(i==3)
 			    printf("Q1) Correct Answer : %s\n",token);
 			 if(i==4)
 			    printf("    Participant Answer : %s\n",token);

@@ -11,9 +11,9 @@ void trainer_Menu()
 {
 	int id,choice;
 	question que;
-	q_node *head,*newnode;
+	q_node *head,*temp,*newnode;
 	head=NULL;
-/*	temp=NULL;*/
+	temp=NULL;
 	FILE *dptr2;
 	extern int id_qcount;
 	
@@ -165,8 +165,7 @@ q_node* read_from_file_question(q_node *head)
 	int count=0;
 	q_node* newnode;
 	char line[100];
-	/*char *end[20];*/
-
+	char *end[20];
 	fptr=fopen("questions.txt","r");
 	
 	if(fptr==NULL)
@@ -279,7 +278,7 @@ q_node* add_node_question(q_node *head,q_node *newnode,  FILE *dptr2)
 
 void display_question(int id,q_node *head)
 {
-/*	int check=0;*/
+	int check=0;
 		q_node *temp=head;
 		
 		while(temp!=NULL && id!=temp->que.ques_id)
@@ -343,7 +342,7 @@ q_node* update_question(int id,q_node* head)
 			
 		}*/
 		
-/*		while(getchar()!='\n');
+		while(getchar()!='\n');
 			printf("\nQuestion description: ");
 			scanf("%[^\n]s",ques_desc);
 			printf("\noption1: ");
@@ -355,9 +354,9 @@ q_node* update_question(int id,q_node* head)
 			printf("\noption4: ");
 			scanf("%s",option4);
 			printf("\ncorrectoption: ");
-			scanf("%d", &correctop);*/
+			scanf("%d", &correctop);
 		
-		printf("Enter new details of the question : ");
+		/*printf("Enter new details of the question : ");
 		scanf("%[^\n]s",ques_desc);
 		printf("\noption1: ");
 		scanf("%s",option1);
@@ -368,7 +367,7 @@ q_node* update_question(int id,q_node* head)
 		printf("\noption4: ");
 		scanf("%s",option4);
 		printf("\ncorrectoption: ");
-		scanf("%d", &correctop);
+		scanf("%d", &correctop);*/
 		
 		strcpy(temp->que.ques_desc,ques_desc);
 		strcpy(temp->que.option1,option1);
@@ -453,7 +452,7 @@ q_node* delete_question(int id,q_node *head)
 
 void displayall_question(q_node *head)
 {
-/*	int check=0;*/
+	int check=0;
 	q_node *temp=head;
 		
 	while(temp!=NULL)

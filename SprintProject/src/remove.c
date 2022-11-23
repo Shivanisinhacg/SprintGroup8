@@ -72,7 +72,7 @@ ud *loadUser(char ch){
 
 
 //function to delete user
-/*void delete_user(char ch)
+void delete_user(char ch)
 {
    ud *head = loadUser(ch);
    char id[30];
@@ -137,7 +137,7 @@ ud *loadUser(char ch){
     {
    	wptr=fopen("participant_details.txt","w");
     }
-    wptr= write_user(wptr, head);
+    wptr=write_user(wptr, head);
     fclose(wptr);
 }
 
@@ -151,5 +151,5 @@ FILE* write_user(FILE *wptr, ud *head)
 	}
 	
 	return wptr;
-}*/
+}
 	
