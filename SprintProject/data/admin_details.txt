@@ -1,5 +1,0 @@
-Admin1,123,987,admin@a.com
-RO,123,9441120187,r@g.c
-Admin5,0123,3216549871,a3@a.com
-Admin2,123231,9514563216,a2@a.com
-Rochit,123,PG,9441120187,rrr@gg.cc
