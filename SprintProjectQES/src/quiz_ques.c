@@ -1,5 +1,21 @@
-//function to add/edit questions to a particular quiz
-
+/*************************************************************************************
+ * *
+ * * FILE NAME : vi quiz_ques.c
+ * *
+ * * DESCRIPTION : This function to add or update in particular quiz
+ * *
+ * * REVISION HISTORY
+ * *
+ * * DATE 		NAME		REFERNCE	REASON
+ * *
+ * * 23-11-2022        SprintGroup8    New              Initial Creation
+ * *
+ * *Copyright 2022, Altran Group All Rights Reserved
+ * *
+ * **********************************************************************************/ 
+/************************************************************************************
+ * *			STANDARD HEADER FILES
+ * **********************************************************************************/
 #include "quiz.h"
 
 //Function for creating a new node
@@ -64,8 +80,14 @@ QQ *loadques(){
    fclose(fp3);
    return head;
 }
-
-//Function for unloading all the data from a linked list to quiz_ques.txt file
+/***********************************************************************************
+ * *
+ * * FUNCTION NAME : unloadques
+ * *
+ * * DESCRIPTION   :Function for unloading all the data from a linked list to quiz_ques.txt file
+ * * 
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 void unloadques(QQ *head){
 
    FILE *fp3;
@@ -80,7 +102,14 @@ void unloadques(QQ *head){
 
 }
 
-//Function for adding a single quiz ID followed by 5 question IDs
+/**********************************************************************************
+ * *
+ * * FUNCTION NAME : addquesid
+ * *
+ * * DESCRIPTION  : This function is used to add questions to particular quiz id
+ * *
+ * * RETURNS      : SUCCESS or FAILURE
+ * ********************************************************************************/
 void addquesid(){
    
    
@@ -103,8 +132,14 @@ void addquesid(){
    
 
 }
-
-//Function for updating question IDs of any quiz IDs
+/**********************************************************************************
+ * *
+ * * FUNCTION NAME : updatequesid
+ * *
+ * * DESCRIPTION  : This function is used to  update questions with their quiz ids
+ * *
+ * * RETURNS      : SUCCESS or FAILURE
+ * *******************************************************************************/
 void updatequesid(){
 
    QQ *head = loadques();

@@ -1,11 +1,29 @@
-//Definition file for question from admin
+/**********************************************************************************
+ * *
+ * * FILE NAME   : trainer_fun.c
+ * *
+ * * DESCRIPTION : This function includes all the details of trainers
+ * *
+ * * Revision History:
+ * * DATE		NAME		REFERNCE		REASON
+ * ********************************************************************************
+ * * 23-11-2022       SprintGroup8     New                      Initial Creation
+ * *
+ * * Copyright 2022, Altran Groups All Rights Reserved
+ * ********************************************************************************//**********************************************************************************
+* * 		STANDARD HEADER FILES
+* *********************************************************************************/
 #include"quiz.h"
-
 int id_qcount=500; //Global variable to generate the quesId
-
 FILE *fptr;
-
-//client file for trainer from admin
+/**********************************************************************************
+ * * 
+ * * FUNCTION NAME : trainer_menu
+ * *
+ * * DESCRIPTION  : This function includes all the details of the trainer
+ * *
+ * * RETURNS     : SUCCESS or FAILURE
+ * ********************************************************************************/
 
 void trainer_Menu()
 {
@@ -13,18 +31,10 @@ void trainer_Menu()
 	question que;
 	q_node *head,*newnode;
 	head=NULL;
-/*	temp=NULL;*/
 	FILE *dptr2;
 	extern int id_qcount;
-	
-	//Reading data from the file to linked list
-	
-	head=read_from_file_question(head);
-	
-	//fclose(dptr);
-	
-	
-	//do while loop runs until the user enters zero value
+	head=read_from_file_question(head);//Reading data from the file to linked list
+	/*do while loop runs until the user enters zero value*/
 	
 	
 	 do{
@@ -165,8 +175,6 @@ q_node* read_from_file_question(q_node *head)
 	int count=0;
 	q_node* newnode;
 	char line[100];
-	/*char *end[20];*/
-
 	fptr=fopen("questions.txt","r");
 	
 	if(fptr==NULL)
@@ -216,9 +224,6 @@ q_node* read_from_file_question(q_node *head)
 		}
 		if(count==6)
 		{
-			/*strcpy(que.correctop,token);
-			token=strtok(NULL,",");
-			count++;*/
 			que.correctop=atoi(token);
 			count++;
 			token=strtok(NULL,",");
@@ -234,7 +239,12 @@ q_node* read_from_file_question(q_node *head)
 }
 
 
-
+/***********************************************************************************
+ * *
+ * * DESCRIPTION  : It includes creating a node to quiz for question id
+ * *
+ * * RETURNS      : SUCCESS or FAILURE
+ * ********************************************************************************/
 q_node* create_node_question(question q)
 {
 	q_node *newnode= (q_node*)malloc(sizeof(q_node));
@@ -258,7 +268,6 @@ q_node* create_node_question(question q)
 q_node* add_node_question(q_node *head,q_node *newnode,  FILE *dptr2)
 {
     q_node *temp=head;
-    //check if LL is empty
     if(head==NULL)
          head = newnode;
     else
@@ -272,14 +281,17 @@ q_node* add_node_question(q_node *head,q_node *newnode,  FILE *dptr2)
 	fprintf(dptr2,"%d,%s,%s,%s,%s,%s,%d\n",newnode->que.ques_id, newnode->que.ques_desc, newnode->que.option1, newnode->que.option2, newnode->que.option3, newnode->que.option4, newnode->que.correctop);
    return head;
 }
-
-
-//Function to display the question details
-//Paramaters: integer, head pointer of the linked list and  no return type
+/***********************************************************************************
+ * *
+ * * FUNCTION NAME : display_question
+ * *
+ * * DESCRIPTION   : Function to display the question details
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 
 void display_question(int id,q_node *head)
 {
-/*	int check=0;*/
 		q_node *temp=head;
 		
 		while(temp!=NULL && id!=temp->que.ques_id)
@@ -318,45 +330,6 @@ q_node* update_question(int id,q_node* head)
 		
 	if(temp!=NULL)
 	{
-		/*while(getchar()!='\n')
-		{
-			printf("\nEnter new details of the question :\n");
-			scanf("%[^\n]s",ques_desc);
-			printf("\noption1: ");
-			scanf("%s",option1);
-			printf("\noption2: ");
-			scanf("%s",option2);
-			printf("\noption3: ");
-			scanf("%s",option3);
-			printf("\noption4: ");
-			scanf("%s",option4);
-			printf("\ncorrectoption: ");
-			scanf("%d", &correctop);
-			
-			strcpy(temp->que.ques_desc,ques_desc);
-			strcpy(temp->que.option1,option1);
-			strcpy(temp->que.option2,option2);
-			strcpy(temp->que.option3,option3);
-			strcpy(temp->que.option4,option4);
-			//strcpy(temp->que.correctop,correctop);
-			temp->que.correctop = correctop;
-			
-		}*/
-		
-/*		while(getchar()!='\n');
-			printf("\nQuestion description: ");
-			scanf("%[^\n]s",ques_desc);
-			printf("\noption1: ");
-			scanf("%s",option1);
-			printf("\noption2: ");
-			scanf("%s",option2);
-			printf("\noption3: ");
-			scanf("%s",option3);
-			printf("\noption4: ");
-			scanf("%s",option4);
-			printf("\ncorrectoption: ");
-			scanf("%d", &correctop);*/
-		
 		printf("Enter new details of the question : ");
 		scanf("%[^\n]s",ques_desc);
 		printf("\noption1: ");
@@ -445,15 +418,18 @@ q_node* delete_question(int id,q_node *head)
     
     return head;
 }
-
-
-
-//Function to display the question details
-//Paramaters: integer, head pointer of the linked list and  no return type
+/************************************************************************************
+ * *
+ * * FUNCTION NAME : displayall_questions
+ * *
+ * * DESCRIPTION   : This function displays all the questions of quiz
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * *********************************************************************************/
 
 void displayall_question(q_node *head)
 {
-/*	int check=0;*/
+
 	q_node *temp=head;
 		
 	while(temp!=NULL)

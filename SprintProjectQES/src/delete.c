@@ -1,6 +1,16 @@
-#include "quiz.h"
-
-
+/******************************************************************************
+ * *
+ * * FILE NAME : delete.c
+ * *
+ * * DESCRIPTION : This function describes about the deletion of user
+ * *
+ * * Revision History
+ * * DATE   		NAME		REFERNCE		REASON
+ * * 23-11-2022        SprintGroup8     New                     Intial Creation
+ * *
+ * *Copyrights 2022, Altran Group All Rights Reserved
+ * **************************************************************************/ 
+  #include "quiz.h"
 //Function for creating a new node
 ud *createNodeUser1()
 {
@@ -8,8 +18,6 @@ ud *createNodeUser1()
    head->next = NULL;
    return head;
 }
-
-
 //Function for adding a new node in the beginning of the linked list.
 ud *addfirstUser1(ud *head)
 {
@@ -19,7 +27,6 @@ ud *addfirstUser1(ud *head)
    head = n;
    return head;
 }
-
 //Function for loading all the data from participant_details.txt file to a linked list.
 ud *loadUser1(char ch){
 
@@ -68,7 +75,14 @@ ud *loadUser1(char ch){
    return head;
 }
 
-//Function for unloading all the data from the linked list to participant_details.txt file
+/***********************************************************************************
+ * *
+ * * FUNCTION NAME: unloadUser
+ * *
+ * * DESCRIPTION   :Function for unloading all the data from the linked list to participant_details.txt file
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * *******************************************************************************************/
 void unloadUser(ud *head, char ch){
 
    FILE *fp3;
@@ -90,7 +104,14 @@ void unloadUser(ud *head, char ch){
 
 }
 
-//Function for deleting participant details
+/***************************************************************************************
+ * *
+ * * FUNCTION NAME : delete_user1
+ * * 
+ * * DESCRIPTION    :Function for deleting participant details
+ * *
+ * * RETURNS        : SUCCESS or FAILURE
+ * **************************************************************************************/
 void delete_user1(char ch){
 
    ud *head = loadUser1(ch);

@@ -1,5 +1,5 @@
 CC = gcc
-ProjDir = /mnt/c/Users/anugu/Desktop/LinuxWs/SprintGroup8/SprintProjectQES
+ProjDir = /home/vasanthi/SprintGroup8/SprintProjectQES
 
 INC = $(ProjDir)/inc
 SRC = $(ProjDir)/src

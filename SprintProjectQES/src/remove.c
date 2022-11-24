@@ -1,5 +1,18 @@
-//function to add/edit questions to a particular quiz
-
+/************************************************************************************
+ * *
+ * * FILE NAME : remove.c
+ * *
+ * * DESCRIPTION : This program is used to add or delete questions to a particular quiz
+ * *
+ * *Revision History
+ * *DATE		NAME			REFERNCE 		REASON
+ * *23-11-2022          SprintGroup8             New                     Initial Creation
+ * *
+ * *Copyright 2022, Altran Group All Rights Reserved
+ * ****************************************************************************************/
+ /*****************************************************************************************
+  * 				STANDARD HEADER FILE
+  * ***************************************************************************************/				
 #include "quiz.h"
 
 //Function for creating a new node
@@ -71,85 +84,5 @@ ud *loadUser(char ch){
 }
 
 
-//function to delete user
-/*void delete_user(char ch)
-{
-   ud *head = loadUser(ch);
-   char id[30];
 
-   printf("\nEnter the user name to delete : ");
-   scanf("%s",id);
-   
-   ud *n = head; 
-   ud *prev = head;
-   while(strcmp(n->name,id)!=0){
-      prev=n;
-      n=n->next;
-   }
-   prev->next=n->next;
-   free(n);
-   
-    ud *temp=head;
-    ud *tag;
-    if(head==NULL)
-    {
-        printf("\nLIST EMPTY");
-    }
-    else if(head->next==NULL)
-    {
-        if(strcmp(temp->name,id)!=0)
-        {
-            head=NULL;
-        }
-    }
-    else if(strcmp(head->name,id)==0)
-    {
-         head=head->next;
-         free(temp);
-         printf("\nQuestion deleted");
-    }
-    else
-    {
-        while(temp!=NULL && (strcmp(temp->name,id)!=0))
-        {
-            tag=temp;
-            temp=temp->next;
-        }
-        if(strcmp(temp->name,id)==0)
-        {
-           tag->next=temp->next;
-           free(temp);
-           printf("\nUser deleted");
-        }
-        else
-        {
-            printf("\nUser Id invalid");
-        }
-        
-    }
-    
-    FILE *wptr;
-    if(ch=='T')
-    {
-    	wptr=fopen("trainer_details.txt","w");
-    }
-    else if(ch == 'P')
-    {
-   	wptr=fopen("participant_details.txt","w");
-    }
-    wptr= write_user(wptr, head);
-    fclose(wptr);
-}
-
-FILE* write_user(FILE *wptr, ud *head)
-{
-	ud *n=head;
-	while(n!=NULL)
-	{
-		fprintf(wptr,"%s,%s,%s,%s,%s",n->name,n->pass,n->quali,n->mobno,n->email);
-		n=n->next;
-	}
-	
-	return wptr;
-}*/
 	

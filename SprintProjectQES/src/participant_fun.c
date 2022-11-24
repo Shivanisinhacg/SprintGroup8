@@ -1,8 +1,28 @@
-//Definition file file for participant quiz
-
+/*************************************************************************************
+ * *
+ * * FILE NAME  : participant_fun.c
+ * *
+ * * DESCRIPTION : This function includes all the details of the participant
+ * *
+ * * REVISION HISTORY:
+ * * DATE        NAME            REFERNCE         REASON
+ * *
+ * *23-11-2022   SprintGroup8    New              Initial Creation
+ * *
+ * *******************************************************************//*********************************************************************
+				STANDARD HEADER FILES
+* ********************************************************************/
 #include "quiz.h"
 
 extern char name[20];
+/*********************************************************************
+ * *
+ * * FUNCTION NAME : participant_Memu
+ * *
+ * * DESCRIPTION   : It includes all the details of the participant menu
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * *******************************************************************/
 
 void participant_Menu()
 {
@@ -69,10 +89,14 @@ node_p *addAtStart(node_p *head)
    head = n;
    return head;
 }
-
-
-
-//This function lets you choose the quiz after displaying the quizcode.It has no argument and returns void.
+/*********************************************************************
+ * *
+ * * FUNCTION NAME : choosequiz
+ * *
+ * * DESCRIPTION   :This function lets you choose the quiz after displaying the quizcode.
+ * *
+ * * RETURNS        :SUCCESS or FAILURE
+ * ********************************************************************/
 void choosequiz(){
    
 	int quizcode;
@@ -89,18 +113,19 @@ void choosequiz(){
 	searchquiz(quizcode);
 
 }
-
-
-/*This function uses the quizcode as the argument and searches the code in the quiz_ques.txt file
-After reaching the quizcode it will store the corresponding 5 question codes.It returns void*/
+/*********************************************************************
+ * *
+ * * FUNCTION NAME : searchquiz
+ * * 
+ * * DESCRIPTION   :This function uses the quizcode as the argument and searches the code in the quiz_ques.txt file
+ * *
+ * * RETURNS      : SUCCESS or FAILURE
+ * ********************************************************************/
 void searchquiz(int quizcode){
    int q1,q2,q3,q4,q5;
    FILE *fp;
    fp=fopen("quiz_ques.txt","r");
-   
-   
    char line[200];
-   
    while(fgets(line,sizeof line ,fp)){
       char *token;
       token=strtok(line,",");
@@ -138,7 +163,14 @@ void searchquiz(int quizcode){
 
 }
 
-/*This function uses five question codes as arguments.It then searches and store the question description and the options for each question code.It returns void.*/
+/**********************************************************************
+ * * 
+ * * FUNCTION NAME :searchques
+ * * 
+ * * DESCRIPTION   :This function searches a question with question id
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * *******************************************************************/
 void searchques(int q1,int q2,int q3,int q4,int q5, int quizcode){
     
    int q[]={q1,q2,q3,q4,q5};
@@ -196,35 +228,30 @@ void searchques(int q1,int q2,int q3,int q4,int q5, int quizcode){
    fclose(fp1);
 
 }
-
-/*This function uses a pointer argument of the type struct.It displays questions and accepts answers from the participants and store the answers and marks in a file.*/
+/***********************************************************************************
+ * *
+ * * FUNCTION NAME :startquiz
+ * *
+ * * DESCRIPTION  :This function uses a pointer argument of the type struct.
+ * *
+ * * RETURNS      : SUCCESS 
+ * ********************************************************************************/
 void startquiz(node_p *head, int quizcode){
    
 	node_p *n=head;
-	/*char ans[20];*/
 	int marks=0;
-
 	FILE *fp;
 	fp=fopen("results.txt","a");
 	printf("\n\n\n");
 	
 	fprintf(fp,"%s,", name);
 	fprintf(fp,"%d,", quizcode);
-	
-	/*struct date dt;
-	getdate(&dt);
-	fprintf(fp,"%d/%d/%d,",
-	   dt.da_day,
-	   dt.da_mon,
-	   dt.da_year);*/
-	   
-	while(n!=NULL){
+
+	   while(n!=NULL){
 		printf("%s\n%s\n%s\n%s\n%s\n\nAnswer - ",n->ques_desc,n->option1,n->option2,n->option3,n->option4);
 		scanf("%d", &n->answer);
 		printf("\n");
-		//n->correctop[strcspn(n->correctop,"\n")]='\0';
 		fprintf(fp,"%d,%d,",n->answer,n->correctop);
-		//fprintf(fp,"%s,",n->correctop);
 		if(n->answer == n->correctop)
 		{
 			++marks;}

@@ -1,31 +1,36 @@
-//functions of Admin
-
+/********************************************************************************
+ * *
+ * * FILE NAME   : admin_fun.c
+ * *
+ * * DESCRIPTION : This functions includes all the admin functions
+ * *
+ * * DATE    		NAME		REFERENCE		REASON
+ * * 23-11-2022       SprintGroup8      New                     Initial creation
+ * *
+ * * Copyrights 2022,Altran Group All Rights Reserved
+ * ******************************************************************************/
+/*********************************************************************************
+ * 				STANDARD HEADER FILES
+ * *******************************************************************************/
 #include"quiz.h"
-
 int id_count=10000;
-
 FILE *fptr;
-
-//function to display admin tasks
+/**********************************************************************************
+ * * FUNCTION NAME : admin_Menu
+ * * DESCRIPTION   : This function includes all the details of admin menu
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 void admin_Menu()
 {
-	int id,choice;
+	int id,choice;/*initializing id and choice*/
 	quiz q;
-	node *head,*newnode;
+	node *head,*newnode;/*initialization of head and newnode*/
 	head=NULL;
-	/*temp=NULL;*/
 	FILE *dptr2;
 	extern int id_count;
-	
-	//Reading data from the file to linked list
-	
-	head=read_from_file_quiz(head);
-	
-	//fclose(dptr);
-	
+	head=read_from_file_quiz(head);//Reading data from the file to linked list
 	
 	//do while loop runs until the user enters zero value
-		
 	do
 	{
 		printf("\n\n_ _ _ _ _ _ _ _ _ _ _ _ ADMIN MENU _ _ _ _ _ _ _ _ _ _ _ _\n");
@@ -81,16 +86,6 @@ void admin_Menu()
 				scanf("%d",&id);
 				head=delete_Quiz(id,head);
 				break;
-				
-		/*	case 7:
-				delete_user('P');
-				break;
-				
-			case 8:
-				delete_user('T');
-				break;*/
-			
-			
 			case 7:
 				menu();
 				break;
@@ -108,58 +103,56 @@ void admin_Menu()
 	return;
 }
 
-//function to display participants
+/**********************************************************************************
+ * * FUNCTION NAME : display_Participants
+ * * DESCRIPTION   : This function displays the participant details
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 void display_Participants(FILE *fptr)
 {
-	fptr = fopen("participant_details.txt", "r");
+	fptr = fopen("participant_details.txt", "r");//to read the participant details
 	char line[200];
-	char *token;
+	char *token;/*token initialization*/
 	
 	printf("\nParticipant Details\n-----------------------------------------------\n\n");
-	while(fgets(line, sizeof(line), fptr))
+	while(fgets(line, sizeof(line), fptr))/*reads the values from the keyboard*/
 	{
 		token=strtok(line,",");
 		printf("User ID\t\t:\t%s\n", token);
-		
 		token=strtok(NULL,",");
-		/*token=strtok(NULL,",");*/
 		printf("Qualification\t:\t%s\n", token);
-		
 		token=strtok(NULL,",");
 		printf("Phone Number\t:\t%s\n", token);
-		
 		token=strtok(NULL,",");
 		printf("Email Id\t:\t%s\n", token);
 		printf("-------------------------------------------\n\n");
 	}
 	
-	fclose(fptr);
+	fclose(fptr);/*closing of file*/
 	return;
 }
 
-//function to display trainers
+/**********************************************************************************
+ * * FUNCTION NAME : display_trainers
+ * * DESCRIPTION   : This function displays the trainer details
+ * * RETURNS       : SUCCESS or FAILURE
+ * *******************************************************************************/
 void display_Trainers(FILE *fptr)
 {
-	fptr = fopen("trainer_details.txt", "r");
-	
+	fptr = fopen("trainer_details.txt", "r");/*opening a file for trainer details*/
 	char line[200];
 	char *token;
-	
 	printf("\nTrainer Details\n-----------------------------------------------\n\n");
-	/*printf("Trainer Name\t Qualification\t\t Phone\t Email id\n");*/
 	printf("----------------------------------------------------------\n");
 	while(fgets(line, sizeof(line), fptr))
 	{
 		token=strtok(line,",");
 		printf("User ID\t\t:\t%s\n", token);
-		
 		token=strtok(NULL,",");
 		token=strtok(NULL,",");
 		printf("Qualification\t:\t%s\n", token);
-		
 		token=strtok(NULL,",");
 		printf("Phone Number\t:\t%s\n", token);
-		
 		token=strtok(NULL,",");
 		printf("Email Id\t:\t%s\n", token);
 		printf("-------------------------------------------\n\n");
@@ -169,9 +162,10 @@ void display_Trainers(FILE *fptr)
 	return;
 }
 
-//Function to create a node for the linked list
-//Paramaters: structure variable of question and returns the new node created
-//Returns the head pointer of the linked list
+/**********************************************************************************
+ * *
+ * * DESCRIPTION : Function to create a node for the linked list
+ * ********************************************************************************/
 
 node* read_from_file_quiz(node *head)
 {
@@ -181,18 +175,14 @@ node* read_from_file_quiz(node *head)
 	int count=0;
 	node* newnode;
 	char line[100];
-	/*char *end[20];*/
 	fptr=fopen("quiz.txt","r");
-	
-	//printf("Entered the read file");
 	if(fptr==NULL)
 		printf("File doesn't exist\n");
 	else
 	{
 	    while(fgets(line,sizeof(line),fptr)!=NULL)
 		{
-	
-		//printf("Entered the read file");
+
 		token=strtok(line,",");
 		
 		if(count==0)
@@ -306,12 +296,14 @@ node* delete_Quiz(int id, node *head)
     return head;
 }
 
-//Function to display the question details
-//Paramaters: integer, head pointer of the linked list and  no return type
-
+/**********************************************************************************
+ * *
+ * * FUNCTION NAME :display_quiz
+ * * DESCRIPTION   :Function to display the question details
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 void display_Quiz(node *head)
 {
-/*	int check=0;*/
 	node *temp=head;	
 	while(temp!=NULL)
 	{
@@ -338,18 +330,20 @@ FILE* write_to_file_quiz(FILE *wptr, node *head)
 }
 
 
-//Function to display results and quiz attempted
-//parameters: Participant ID
+/***********************************************************************************
+ * *
+ * * FUNCTION NAME : display_results
+ * * DESCRIPTION   : Function to display results and quiz attempted
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 void display_results()
 {
-/*	 int pid;*/
 	FILE *fp;
-	fp=fopen("results.txt","r");
+	fp=fopen("results.txt","r");/*results file open*/
 	char str[50];
-	printf("Enter participant ID : ");
+	printf("Enter participant ID : ");/*reads the participant id*/
 	scanf("%s", str);   
 	char line[200];
-
 	while(fgets(line,sizeof line ,fp))
 	{
 		char *token;
@@ -369,26 +363,6 @@ void display_results()
 			 
 			 if(i==2)
 			    printf("\nAttempted Quiz ID :\t%d\n",atoi(token));
-		/*	 if(i==3)
-			    printf("Q1) Correct Answer : %s\n",token);
-			 if(i==4)
-			    printf("    Participant Answer : %s\n",token);
-			 if(i==5)
-			    printf("Q2) Correct Answer : %s\n",token);
-			 if(i==6)
-			    printf("    Participant Answer : %s\n",token);
-			 if(i==7)
-			    printf("Q3) Correct Answer : %s\n",token);
-			 if(i==8)
-			    printf("    Participant Answer : %s\n",token);
-			 if(i==9)
-			    printf("Q4) Correct Answer : %s\n",token);
-			 if(i==10)
-			    printf("    Participant Answer : %s\n",token);
-			 if(i==11)
-			    printf("Q5) Correct Answer : %s\n",token);
-			 if(i==12)
-			    printf("    Participant Answer : %s\n",token);*/
 			 if(i==13){
 			    printf("Marks obtained    :\t%d/5\n",atoi(token));
 			    break;}

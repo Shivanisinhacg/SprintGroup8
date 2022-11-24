@@ -1,22 +1,33 @@
-//program to read and write login credentials in a file
+/************************************************************************************
+ * *
+ * * FILE NAME : login_test.c
+ * *
+ * * DESCRIPTION : program to read and write login credentials in a file
+ * *
+ * * Revision History
+ * * DATE   		NAME		REFERENCE  		REASON
+ * * 23-11-2022       SprintGroup8	New                	Initial Creation
+ * *
+ * *Copyrights 2022, Altran Group All Rights Reserved
+ * *
+ * *********************************************************************************/
 
 #include "quiz.h"
-
-
-/*//Declaration of function to validate login credentials
-void check(FILE *);
-
-//Declaration of function to enter details of new user
-void entry(FILE *);*/
-
 FILE *fptr;
-
 extern char name[20];
 char pass[20];
 char phone[10];
 char email[30];
 char qual[30];
 int res=0;
+/**********************************************************************************
+ * * 
+ * * FUNCTION NAME : login
+ * *
+ * * DESCRIPTION   : This function includes the details of login page
+ * *
+ * * RETURNS      : SUCCESS or FAILURE
+ * *******************************************************************************/
 
 void login(char ch)
 {
@@ -118,10 +129,17 @@ void login(char ch)
 	return;	      
 }
 
-//function to validate login credentials
+/**********************************************************************************
+ * *
+ * * FUNCTION NAME :check
+ * *
+ * * DESCRIPTION   : this function whether the login credentials is correct or not
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * *******************************************************************************/
 int check(FILE *fptr)
 {
-	char *user;
+	char *user;/*initializing a user*/
 	char *code;
 	int res=0;
 		
@@ -154,11 +172,16 @@ int check(FILE *fptr)
 	}
 	return res;
 }
-
-//function to enter details of a new user
+/**********************************************************************************
+ * *
+ * * FUNCTION NAME : entry
+ * *
+ * * DESCRIPTION   : This function enters into the login data check whether it is correct or not
+ * *
+ * * RETURNS       : SUCCESS or FAILURE
+ * ********************************************************************************/
 void entry(FILE *fptr)
 {
-	//fptr = fopen("login_data.txt", "a");
 	printf("\nRegistration of new user\n");
 	printf("Enter User Name : ");
 	scanf("%s", name);
@@ -194,7 +217,6 @@ void entry(FILE *fptr)
 	int res = 0;
 	while(res!=1)
 	{
-		/*char num[10];*/
 		printf("\nEnter 10 digit mobile number: ");
 		scanf("%s", phone);
 		res = validate_number(phone);
@@ -204,14 +226,12 @@ void entry(FILE *fptr)
 	res = 0;
 	while(res!=1)
 	{
-		/*char mail[30];*/
 		printf("\nEnter Email ID: ");
 		scanf("%s", email);
 		res = validate_email(email);
 	}
 	
 	fprintf(fptr, "%s,%s,%s,%s,%s\n", name, pass, qual, phone, email);
-	//fclose(fptr);
 	printf("\n\tRegistration Successful\n");
 	
 	
