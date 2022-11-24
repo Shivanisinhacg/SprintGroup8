@@ -88,7 +88,7 @@ FILE* write_to_file_quiz(FILE*, node*);
 void display_results();
 
 /*Function to delete participant from the quiz application*/
-void delete_user(char);
+/*void delete_user(char);*/
 
 /***************TRAINER FUNCTION DECLARATIONS******************/
 typedef struct Question{

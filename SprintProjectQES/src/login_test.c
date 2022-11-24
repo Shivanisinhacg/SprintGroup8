@@ -22,7 +22,7 @@ void login(char ch)
 {
 	int type;
 	printf("\n\t-----------------------------\n");
-	printf("\n\t\t      Select\n\n\
+	printf("\n\t\t       Select\n\n\
 		0	:	Login\n\
 		1	:	Sign Up\n\n\t\t\t");
 	scanf("%d", &type);

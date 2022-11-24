@@ -9,7 +9,7 @@ void participant_Menu()
 	int ch;
 	printf("\n\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n");
 	printf("\n\t\tWelcome To Quiz\n\n");
-	printf("\t\t***RULES***\n\n\tThere will be FIVE questions\n\tAnswering every question is compulsory\n\tEnter the correct option corresponding to the answer\n");
+	printf("\t\t  RULES \n\n\tThere will be FIVE questions\n\tAnswering every question is compulsory\n\tEnter the correct option corresponding to the answer\n");
 	printf("\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n");
 	printf("\n\tPress 1 to play the quiz");
 	printf("\n\tPress 9 to display Results");

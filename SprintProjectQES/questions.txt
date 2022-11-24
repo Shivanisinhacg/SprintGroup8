@@ -3,4 +3,18 @@
 503,india?,country,state,village,city,1
 504,504 question?,yes,no,y/n,Na,1
 505,Bhai?,bro,sis,father,mother,1
-506,10002,2,5,4,3,2
+507,Welcome,7,6,4,9,1
+508,what is your name?,vasu,lavu,shivani,saahera,2
+509,company?,Altran,wipro,Tech,M,1
+510,location?,bnglr,hyd,vizag,chennai,2
+511,Bestone?,friend,bestfriend,closefriend,Enemy,2
+513,sweet?,kalakand,chips,mixture,frenchfries,1
+514,Capital of india?,Newdelhi,Haryana,bihar,gujarat,1
+516,independence day?,15Aug,14Nov,26Jan,12Jan,1
+517,Republicday?,15Aug,26Jan,14Nov,12Jan,2
+518,Engineers day?,aug15,sep15,nov15,dec15,2
+519,1+2+3+4+5?,15,16,18,20,1
+520,ramanujan number?,1724,1728,1729,1725,3
+521,NatnlMathematics day?,dec12,dec15,dec22,dec21,3
+522,oddone out?,blue,black,grey,brown,3
+523,,524,523,533,532,2

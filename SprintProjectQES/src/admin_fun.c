@@ -36,9 +36,7 @@ void admin_Menu()
 			 4 - ADD QUIZ \n\
 			 5 - DISPLAY RESULTS \n\
 			 6 - DELETE QUIZ \n\
-			 7 - DELETE PARTICIPANT \n\
-			 8 - DELETE TRAINER \n\
-			 9 - LOGIN PAGE\n\
+			 7 - LOGIN PAGE\n\
 			 0 - EXIT\n");
 		
 		scanf("%d", &choice);
@@ -93,7 +91,7 @@ void admin_Menu()
 				break;*/
 			
 			
-			case 9:
+			case 7:
 				menu();
 				break;
 				
@@ -149,7 +147,7 @@ void display_Trainers(FILE *fptr)
 	
 	printf("\nTrainer Details\n-----------------------------------------------\n\n");
 	/*printf("Trainer Name\t Qualification\t\t Phone\t Email id\n");*/
-	//printf("----------------------------------------------------------------\n");
+	printf("----------------------------------------------------------\n");
 	while(fgets(line, sizeof(line), fptr))
 	{
 		token=strtok(line,",");
@@ -314,8 +312,7 @@ node* delete_Quiz(int id, node *head)
 void display_Quiz(node *head)
 {
 /*	int check=0;*/
-	node *temp=head;
-		
+	node *temp=head;	
 	while(temp!=NULL)
 	{
 		printf("\nDetails of the quiz are :%d, %s",temp->q.quiz_id, temp->q.quiz_desc);

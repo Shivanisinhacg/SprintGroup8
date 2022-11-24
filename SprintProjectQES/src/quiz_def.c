@@ -14,11 +14,15 @@ char email[30];
 void welcomePage()
 {
     printf("\n\n\n");
-    printf("--------------WELCOME TO THE QUIZ WORLD------------------\n");
-    printf("\n*****************SELECT USER TYPE**********************\n");
-    printf("\n\t\t*1\t-\tADMIN*\
-            \n\t\t*2\t-\tTRAINER*\
-            \n\t\t*3\t-\tPARTICIPANT*\n");
+    printf("-----------------------------------------------------------\n");
+    printf("\n\n\n");
+    printf("\n\n\t       WELCOME TO THE QUIZ WORLD              \n");
+    printf("\n\n\n");
+    printf("--------------------------------------------------------------\n");
+    printf("\n                SELECT USER TYPE                    \n\n");
+    printf("\n\t\t1\t-\tADMIN\
+            \n\t\t2\t-\tTRAINER\
+            \n\t\t3\t-\tPARTICIPANT\n");
             
     return;
 }
@@ -29,7 +33,7 @@ void menu()
 {
     welcomePage();
     
-    printf("\n\n****************ENTER YOUR CHOICE********************\n\n\t\t\t");
+    printf("\n\t         ENTER YOUR CHOICE         \n\n\t\t\t");
     //char ch;
     int ch;
     scanf("%d", &ch);
@@ -37,7 +41,7 @@ void menu()
     while(!(ch==1 || ch==2 || ch==3))
     {
     	printf("\n\n\t\tINVALID OPTION\n\n\t");
-    	printf("\n\n****************ENTER YOUR CHOICE********************\n\n\t\t\t");
+    	printf("\n\n         ENTER YOUR CHOICE       \n\n\t\t\t");
     	scanf("%d", &ch);
     }
    
